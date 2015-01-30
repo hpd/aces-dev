@@ -44,7 +44,8 @@ void main
     output varying float rOut,
     output varying float gOut,
     output varying float bOut,
-    output varying float aOut
+    output varying float aOut,
+    input varying int transferFunctionOnly = 0
 )
 {
     float ACESccLin[3];
@@ -52,7 +53,12 @@ void main
     ACESccLin[1] = ACEScc_to_lin( gIn);
     ACESccLin[2] = ACEScc_to_lin( bIn);
 
-    float ACES[3] = mult_f3_f44( ACESccLin, AP1_2_AP0_MAT);
+    float ACES[3];
+    if (transferFunctionOnly == 0) {
+        ACES = mult_f3_f44( ACESccLin, AP1_2_AP0_MAT);
+    } else {
+        ACES = ACESccLin;
+    }
   
     rOut = ACES[0];
     gOut = ACES[1];

@@ -44,7 +44,8 @@ void main
     output varying float rOut,
     output varying float gOut,
     output varying float bOut,
-    output varying float aOut
+    output varying float aOut,
+    input varying int transferFunctionOnly = 0
 )
 {
     float ACES[3] = { rIn, gIn, bIn};
@@ -66,7 +67,13 @@ void main
     // values so that a conversion from ACES to ACEScc and back can be made 
     // lossless.
 
-    float ACESccLin[3] = mult_f3_f44( ACES, AP0_2_AP1_MAT);
+    float ACESccLin[3];
+    if (transferFunctionOnly == 0) {
+        ACESccLin = mult_f3_f44( ACES, AP0_2_AP1_MAT);
+    } else {
+        ACESccLin = ACES;
+    }
+
 
     rOut = lin_to_ACEScc( ACESccLin[0]);
     gOut = lin_to_ACEScc( ACESccLin[1]);
