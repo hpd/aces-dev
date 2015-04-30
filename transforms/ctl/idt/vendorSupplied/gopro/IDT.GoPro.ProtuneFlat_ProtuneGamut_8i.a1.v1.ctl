@@ -3,6 +3,10 @@
 // <ACESuserName>ACES 1.0 Input - GoPro Protune Flat</ACESuserName>
 
 //
+// EXPERIMENTAL
+//
+
+//
 // IDT for GoPro Cameras capturing Protune Flat footage - 8 bits
 //
 
