@@ -4,7 +4,7 @@ Academy / ASC Common LUT Format (CLF)
 
 Context
 --- 
-This bundle contains an implementation of the Academy / ASC Common LUT Format (CLF). The format was developed as part of the Academy's ACES project.
+This bundle contains reference implementations of the Academy / ASC Common LUT Format (CLF) and the ACES Clip Metadata formats. The formats were developed as part of the Academy's ACES project.
 
 The **ACES** project home page is here: http://www.oscars.org/aces
 
@@ -69,6 +69,26 @@ convertOCIOtoCLF
 	- Not all flags are supported.
 		- Ex. 'inverse' for Matrix Transforms
 
+Clip Metadata
+-------------
+### Library
+aces/clip
+
+- Provides simple Python interface to read, write and query Clip Metadata.
+- Implements the TB-2014-009 specification included in the ACES 1.0 release
+- Includes examples of
+	- Creating ClipMetadata and various sub-components
+	- Reading a Clip Metadata file
+	- Writing a Clip Metadata file
+- Does little checking for validity of the data
+- No support for formatting dates, uuids or other data stored in fields
+
+### Tools
+clipinfo.py
+
+- Prints information about a Clip to the terminal
+
+
 Extensions
 ---------------------
 - Autodesk extensions
@@ -82,11 +102,19 @@ Extensions
 - Duiker Research extensions
 	- Group ProcessNode
 		- Useful for organizing list of nodes that represent a single filter/transform
+	- 'floatEncoding' Array attribute and associated behavior
 
 Would be nice to have
 ---------------------
+### CLF
 
 - An 'inverse' style for ProcessNodes such as LUT1D, Matrix, Range, ASC CDL.
+
+### Clip
+
+- Example integration of Clip support into application
+- Questions answered about how file should work in a multi-user scenario
+
 
 Thanks
 ------
@@ -107,7 +135,7 @@ The original author of this CLF implementation is:
 
 Dependencies
 ------------
-The CLF (aces/clf) module can be used independently. The tools that work with CLF depend on the following libraries:
+The CLF (aces/clf) and Clip Metadata (aces/clip) modules can be used independently. The tools that work with CLF depend on the following libraries:
 
 - **OpenImageIO**: http://openimageio.org
 - **OpenColorIO**: http://opencolorio.org/
