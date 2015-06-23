@@ -27,8 +27,8 @@ void main
   float maxLinear = pow(2.0, maxExposure) * middleGrey;
   float scale = (maxLinear - minLinear) / PQ_max;
 
-  rOut = pq_r( (rIn - minLinear)*scale );
-  gOut = pq_r( (gIn - minLinear)*scale );
-  bOut = pq_r( (bIn - minLinear)*scale );
+  rOut = pq_r( (rIn - minLinear)/scale );
+  gOut = pq_r( (gIn - minLinear)/scale );
+  bOut = pq_r( (bIn - minLinear)/scale );
   aOut = aIn;  
 }
