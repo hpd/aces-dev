@@ -54,6 +54,14 @@ const Chromaticities P3DCI_PRI =
   { 0.31400,  0.35100}
 };
 
+const Chromaticities P3D65_PRI =
+{
+  { 0.68000,  0.32000},
+  { 0.26500,  0.69000},
+  { 0.15000,  0.06000},
+  { 0.31270,  0.32900}
+};
+
 const Chromaticities ARRI_ALEXA_WG_PRI =
 {
   {0.68400, 0.31300},
