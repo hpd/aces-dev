@@ -28,7 +28,8 @@ const float CINEMA_BLACK = pow10(log10(0.02)); // CINEMA_WHITE / 2400.
 const float DIM_SURROUND_GAMMA = 0.9811;
 
 // Saturation compensation factor
-const float ODT_SAT_FACTOR = 0.93;
+//const float ODT_SAT_FACTOR = 0.93;
+const float ODT_SAT_FACTOR = 1.00;
 const float ODT_SAT_MAT[3][3] = calc_sat_adjust_matrix( ODT_SAT_FACTOR, AP1_RGB2Y);
 
 

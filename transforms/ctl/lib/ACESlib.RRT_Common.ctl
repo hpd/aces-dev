@@ -19,7 +19,8 @@ const float RRT_RED_HUE = 0.;
 const float RRT_RED_WIDTH = 135.;
 
 // Desaturation contants
-const float RRT_SAT_FACTOR = 0.96;
+//const float RRT_SAT_FACTOR = 0.96;
+const float RRT_SAT_FACTOR = 1.00;
 const float RRT_SAT_MAT[3][3] = calc_sat_adjust_matrix( RRT_SAT_FACTOR, AP1_RGB2Y);
 
 
